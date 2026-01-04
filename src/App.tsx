@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useBusinessStore } from './store/useBusinessStore';
 import Navigation from './components/Navigation';
 import Dashboard from './components/Dashboard';
+import AIContentStudio from './components/AIContentStudio';
+import SEEDSFunnel from './components/SEEDSFunnel';
 import SprintTracker from './components/SprintTracker';
 import RevenueDashboard from './components/RevenueDashboard';
 import ProductRoadmap from './components/ProductRoadmap';
@@ -29,6 +31,10 @@ function App() {
     switch (currentView) {
       case 'dashboard':
         return <Dashboard />;
+      case 'ai-studio':
+        return <AIContentStudio />;
+      case 'seeds':
+        return <SEEDSFunnel />;
       case 'sprint':
         return <SprintTracker />;
       case 'revenue':

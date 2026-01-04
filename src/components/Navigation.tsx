@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useBusinessStore } from '../store/useBusinessStore';
 import {
   LayoutDashboard,
+  Wand2,
+  TrendingUp,
   ListTodo,
   DollarSign,
   Package,
@@ -23,6 +25,8 @@ interface NavigationProps {
 
 const navigationItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { id: 'ai-studio', label: 'AI Studio', icon: Wand2 },
+  { id: 'seeds', label: 'SEEDS Funnel', icon: TrendingUp },
   { id: 'sprint', label: '90-Day Sprint', icon: ListTodo },
   { id: 'revenue', label: 'Revenue', icon: DollarSign },
   { id: 'products', label: 'Products', icon: Package },
