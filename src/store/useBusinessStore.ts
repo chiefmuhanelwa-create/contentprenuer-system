@@ -80,7 +80,7 @@ export const useBusinessStore = create<BusinessState>()(
       students: [],
       faithEntries: [],
       risks: [],
-      sprintStartDate: new Date(),
+      sprintStartDate: new Date(Date.now()), // Use Date.now() for better serialization
       revenueTarget: 170000, // R170,000 target from blueprint
       darkMode: false,
 
