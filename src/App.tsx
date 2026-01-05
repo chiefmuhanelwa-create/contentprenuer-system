@@ -1,50 +1,33 @@
 import { useState } from 'react';
-import Navigation from './components/Navigation';
-import Dashboard from './components/Dashboard';
-import AIContentStudio from './components/AIContentStudio';
-import SEEDSFunnel from './components/SEEDSFunnel';
-import RevenueDashboard from './components/RevenueDashboard';
-import SprintTracker from './components/SprintTracker';
-import ProductRoadmap from './components/ProductRoadmap';
-import ContentCalendar from './components/ContentCalendar';
-
-type View = 'dashboard' | 'ai-studio' | 'seeds' | 'revenue' | 'sprint' | 'products' | 'calendar';
 
 function App() {
-  const [currentView, setCurrentView] = useState<View>('dashboard');
-
-  const renderView = () => {
-    switch (currentView) {
-      case 'dashboard':
-        return <Dashboard />;
-      case 'ai-studio':
-        return <AIContentStudio />;
-      case 'seeds':
-        return <SEEDSFunnel />;
-      case 'revenue':
-        return <RevenueDashboard />;
-      case 'sprint':
-        return <SprintTracker />;
-      case 'products':
-        return <ProductRoadmap />;
-      case 'calendar':
-        return <ContentCalendar />;
-      default:
-        return <Dashboard />;
-    }
-  };
+  const [count, setCount] = useState(0);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navigation currentView={currentView} onNavigate={(view) => setCurrentView(view as View)} />
-      <main className="container mx-auto px-4 py-6">
-        {renderView()}
-      </main>
+    <div style={{ padding: '50px', fontFamily: 'system-ui' }}>
+      <h1>🚀 NOCHILL ContentOS - Basic Test</h1>
+      <p>If you can see this, React is working!</p>
+      <p>Tailwind CSS test below:</p>
 
-      {/* Footer */}
-      <footer className="text-center py-6 text-gray-600 dark:text-gray-400 italic">
-        <p>"You understand? Because you understand." 💪</p>
-      </footer>
+      <div className="bg-blue-500 text-white p-4 rounded-lg mt-4">
+        This box should be blue if Tailwind CSS is working
+      </div>
+
+      <button
+        onClick={() => setCount(count + 1)}
+        className="mt-4 bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600"
+      >
+        Counter: {count} (Click me!)
+      </button>
+
+      <div className="mt-8 p-4 bg-yellow-100 border-l-4 border-yellow-500">
+        <h3 className="font-bold">Debugging Info:</h3>
+        <p>✅ React is rendering</p>
+        <p>✅ useState hook is working</p>
+        <p className="text-sm text-gray-600 mt-2">
+          If this works, we'll restore the full app with components
+        </p>
+      </div>
     </div>
   );
 }
