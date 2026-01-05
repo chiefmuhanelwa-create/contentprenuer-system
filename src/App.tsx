@@ -32,6 +32,9 @@ function App() {
 
     // Check if API key is configured
     const apiKey = import.meta.env.VITE_ANTHROPIC_API_KEY;
+    console.log('API Key check:', apiKey ? 'Key found (length: ' + apiKey.length + ')' : 'No key found');
+    console.log('Environment:', import.meta.env);
+
     if (!apiKey || apiKey === '') {
       setError('Please add your Anthropic API key to the .env file as VITE_ANTHROPIC_API_KEY');
       return;
